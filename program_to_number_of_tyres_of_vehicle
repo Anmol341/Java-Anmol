@@ -1,0 +1,40 @@
+public class Vehicle {
+    public void display() {
+        System.out.println("This is a Vehicle.");
+    }
+}
+public class Car extends Vehicle {
+    public void display() {
+        System.out.println("This is a Car.");
+    }
+}
+public class Bike extends Vehicle {
+    public void display() {
+        System.out.println("This is a Bike.");
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of tyres: ");
+        int n = sc.nextInt();
+        
+        Vehicle vehicle;
+        switch (n) {
+            case 2:
+                vehicle = new Bike();
+                break;
+            case 4:
+                vehicle = new Car();
+                break;
+            default:
+                vehicle = new Vehicle();
+                break;
+        }
+        
+        vehicle.display();
+        sc.close();
+    }
+}
